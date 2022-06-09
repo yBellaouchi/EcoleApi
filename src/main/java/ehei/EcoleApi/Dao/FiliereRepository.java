@@ -11,4 +11,8 @@ public interface FiliereRepository extends JpaRepository<Filiere,Long> {
 	@Query("select f from Filiere f where f.id =:x ")
 	public List<Filiere> chercherfiliere(
 			@Param ("x")long id);
+	
+	@Query("select f from Filiere f where f.libelle = ?1")
+	Filiere findByLibelle(String libelle);
+
 }

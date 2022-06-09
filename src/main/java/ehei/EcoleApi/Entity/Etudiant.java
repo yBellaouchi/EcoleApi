@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 @Entity 
 public class Etudiant implements Serializable {
 	@Id @GeneratedValue
-	private int id;
+	private Long id;
 	private String nom;
 	private String prenom;
 	private String cin;
@@ -24,10 +24,15 @@ public class Etudiant implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getId() {
+	public Long getId() {
 	return id;
 }
-public Etudiant(int id, String nom, String prenom, String cin, int age, ehei.EcoleApi.Entity.Filiere filiere) {
+@Override
+	public String toString() {
+		return "Etudiant [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", cin=" + cin + ", age=" + age
+				+ ", Filiere=" + Filiere + "]";
+	}
+public Etudiant(Long id, String nom, String prenom, String cin, int age, ehei.EcoleApi.Entity.Filiere filiere) {
 	super();
 	this.id = id;
 	this.nom = nom;
@@ -36,7 +41,15 @@ public Etudiant(int id, String nom, String prenom, String cin, int age, ehei.Eco
 	this.age = age;
 	this.Filiere = filiere;
 }
-public void setId(int id) {
+public Etudiant(String nom, String prenom, String cin, int age, ehei.EcoleApi.Entity.Filiere filiere) {
+	// TODO Auto-generated constructor stub
+	this.nom = nom;
+	this.prenom = prenom;
+	this.cin = cin;
+	this.age = age;
+	this.Filiere = filiere;
+}
+public void setId(Long id) {
 	this.id = id;
 }
 public String getNom() {
