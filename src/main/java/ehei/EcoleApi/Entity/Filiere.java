@@ -23,16 +23,8 @@ public class Filiere implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idFiliere;
 	private String libelle;
-	@ManyToOne
-	@JoinColumn(name="idMatiere")
-	  private Matiere matiere;
-	public Matiere getMatiere() {
-		return matiere;
-	}
-
-	public void setMatiere(Matiere matiere) {
-		this.matiere = matiere;
-	}
+	
+	
 
 	/*
 	 * @ManyToMany(cascade = { CascadeType.ALL })

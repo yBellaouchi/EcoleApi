@@ -18,8 +18,16 @@ public class Matiere {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idMatiere;
 	private String libelle;
-	
+	@ManyToOne
+	@JoinColumn(name="idFiliere")
+	  private Filiere filiere;
 
+	public Filiere getFiliere() {
+		return filiere;
+	}
+	public void setFiliere(Filiere filiere) {
+		this.filiere = filiere;
+	}
 	/*
 	 * @ManyToMany(mappedBy="matieres",cascade = { CascadeType.ALL }) private
 	 * List<Filiere> filieres ;
