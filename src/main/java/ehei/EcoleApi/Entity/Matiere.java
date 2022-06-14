@@ -2,6 +2,7 @@ package ehei.EcoleApi.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,6 +23,10 @@ public class Matiere {
 	@JoinColumn(name="idFiliere")
 	  private Filiere filiere;
 
+	@Override
+	public String toString() {
+		return "Matiere [idMatiere=" + idMatiere + ", libelle=" + libelle + ", filiere=" + filiere + "]";
+	}
 	public Filiere getFiliere() {
 		return filiere;
 	}
@@ -45,15 +50,12 @@ public class Matiere {
 		this.libelle = libelle;
 	}
 
-	/*
-	 * public List<Filiere> getFilieres() { return filieres; } public void
-	 * setFilieres(List<Filiere> filieres) { this.filieres = filieres; }
-	 */
-	public Matiere(Long idMatiere, String libelle, List<Filiere> filieres) {
+	
+	
+	public Matiere(String libelle, Filiere filiere) {
 		super();
-		this.idMatiere = idMatiere;
 		this.libelle = libelle;
-		//this.filieres = filieres;
+		this.filiere = filiere;
 	}
 	public Matiere() {
 		super();

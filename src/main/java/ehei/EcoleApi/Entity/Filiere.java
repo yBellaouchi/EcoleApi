@@ -26,24 +26,13 @@ public class Filiere implements Serializable {
 	
 	
 
-	/*
-	 * @ManyToMany(cascade = { CascadeType.ALL })
-	 * 
-	 * @JoinTable( name="Fil_Mat", joinColumns=@JoinColumn(name="idFiliere",
-	 * referencedColumnName="idFiliere"),
-	 * inverseJoinColumns=@JoinColumn(name="idMatiere",referencedColumnName=
-	 * "idMatiere")) private List<Matiere> matieres ;
-	 */
+	
 	public Filiere() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * public List<Matiere> getMatieres() { return matieres; }
-	 * 
-	 * public void setMatieres(List<Matiere> matieres) { this.matieres = matieres; }
-	 */
+	
 
 	public Long getIdFiliere() {
 		return idFiliere;

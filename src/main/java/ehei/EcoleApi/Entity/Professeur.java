@@ -2,13 +2,14 @@ package ehei.EcoleApi.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 @Entity
 public class Professeur {
-	@Id @GeneratedValue
-	private int id;
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String nom;
 	private String prenom;
 	private String cin;
@@ -19,18 +20,19 @@ public class Professeur {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Professeur(int id, String nom, String prenom, String cin, Matiere matiere) {
+	public Professeur( String nom, String prenom, String cin, Matiere matiere) {
 		super();
-		this.id = id;
+
 		this.nom = nom;
 		this.prenom = prenom;
 		this.cin = cin;
 		this.matiere = matiere;
 	}
-	public int getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNom() {

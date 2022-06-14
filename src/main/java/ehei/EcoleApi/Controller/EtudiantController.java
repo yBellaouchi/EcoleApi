@@ -59,7 +59,7 @@ public class EtudiantController {
 	}
 
 	@PutMapping("/{id}")
-	public Etudiant updateFiliere(@PathVariable Long id, @RequestParam(value = "nom") String nom,
+	public Etudiant updateEtudiant(@PathVariable Long id, @RequestParam(value = "nom") String nom,
 			@RequestParam(value = "prenom") String prenom, @RequestParam(value = "cin") String cin,
 			@RequestParam(value = "age") int age, @RequestParam(value = "filiere") String filiere) {
 		Filiere f = iFiliere.findByLibelle(filiere);
